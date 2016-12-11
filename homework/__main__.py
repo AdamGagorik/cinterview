@@ -58,7 +58,7 @@ class Options(collections.OrderedDict):
     def __init__(self):
         super(Options, self).__init__()
         self.input_csv = 'homework.csv'
-        self.label = 32
+        self.label = None
         self.size  = 32
         self.save  = False
         self.show  = False
@@ -113,52 +113,62 @@ def main(csv, label, size=32, show=False, save=False):
     """
     data_bunch = bunch.RADARBunch(csv)
 
-    # subset = data_bunch.get_subset_for_many_objects(
-    #     *data_bunch.object_labels, traits=['General.uiLifeCycles'])
-
-    # analyze an object
+    # analyze the source
     robj = plots.trajectory.ReferenceObject(data_bunch)
-    tobj = plots.trajectory.TargetObject(data_bunch, label)
-    dobj = plots.trajectory.DeltaObject(data_bunch, robj, tobj)
-
+    
     # table output
-    logger.debug('target summary\n%s',
-                 robj.to_data_frame().describe())
-
     logger.debug('reference summary\n%s',
                  robj.to_data_frame().describe())
 
-    logger.debug('reference-target summary\n%s',
-                 dobj.to_data_frame().describe())
-
-    # create plots
+    # create boxplot
     if show or save:
         # boxplot uiLifeCycles to see meaningful signals
         plots.boxplot.many(data_bunch, trait='General.uiLifeCycles')
         if save:
             plots.helpers.savefig('uiLifeCycles.pdf')
 
-        # trajectory plots
-        plots.trajectory.components(objs=[robj, tobj])
-        if save:
-            plots.helpers.savefig('traj_{}.pdf'.format(label))
-
-        plots.trajectory.components(objs=[dobj],
-                                    func=plots.trajectory.attr_histogram)
-        if save:
-            plots.helpers.savefig('hist_{}.pdf'.format(label))
-
-        for func in ['mean', 'std', 'median', 'cov']:
-            plots.trajectory.components(
-                objs=[dobj], func=lambda *args, **kwargs:
-                plots.trajectory.window(*args, func=func, size=size, **kwargs))
-            if save:
-                plots.helpers.savefig('rollex_{}.pdf'.format(func))
-
-        if show:
-            plt.show()
+    if label is None:
+        logger.debug('no --label was given')
+        # subset = data_bunch.get_subset_for_many_objects(
+        #     *data_bunch.object_labels, traits=['General.uiLifeCycles'])
     else:
-        logger.debug('skipping plots (use --show or --save)')
+        # analyze the object
+        tobj = plots.trajectory.TargetObject(data_bunch, label)
+        dobj = plots.trajectory.DeltaObject(data_bunch, robj, tobj)
+
+        # table output
+        logger.debug('target summary\n%s',
+                     tobj.to_data_frame().describe())
+
+        logger.debug('reference-target summary\n%s',
+                     dobj.to_data_frame().describe())
+
+        # create plots
+        if show or save:
+            # trajectory components
+            plots.trajectory.components(objs=[robj, tobj])
+            if save:
+                plots.helpers.savefig('traj_{}.pdf'.format(label))
+
+            # trajectory delta histogram
+            plots.trajectory.components(objs=[dobj],
+                                        func=plots.trajectory.attr_histogram)
+            if save:
+                plots.helpers.savefig('hist_{}.pdf'.format(label))
+
+            # trajectory delta windowing
+            for func in ['mean', 'std', 'median']:
+                plots.trajectory.components(
+                    objs=[dobj], func=lambda *args, **kwargs:
+                    plots.trajectory.window(*args, func=func, size=size, **kwargs))
+                if save:
+                    plots.helpers.savefig('rollex_{}.pdf'.format(func))
+        else:
+            logger.debug('skipping plots (use --show or --save)')
+
+    # show plots
+    if show:
+        plt.show()
 
 
 if __name__ == '__main__':
