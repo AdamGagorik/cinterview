@@ -1,0 +1,77 @@
+[D][2016-12-10][22:00:30][22878][__main__] input_csv: homework.csv
+[D][2016-12-10][22:00:30][22878][__main__] label: 32
+[D][2016-12-10][22:00:30][22878][__main__] size: 32
+[D][2016-12-10][22:00:30][22878][__main__] save: True
+[D][2016-12-10][22:00:30][22878][__main__] show: False
+[D][2016-12-10][22:00:30][22878][homework.bunch] found columns: 288
+[D][2016-12-10][22:00:30][22878][homework.bunch] found sources: 5
+[D][2016-12-10][22:00:30][22878][homework.bunch] found objects: 280
+[D][2016-12-10][22:00:30][22878][homework.bunch] found olabels: 40
+[D][2016-12-10][22:00:30][22878][homework.bunch] found otraits: 7
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (source): CAN Global.Angle_tg1
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (source): CAN Global.LKTime_tg1
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (source): CAN Global.Range_tg1
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (source): CAN Global.RelSpd_tg1
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (source): CAN Global.Status_tg1
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (object): aObject[i].Attributes.eClassification
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (object): aObject[i].Attributes.eDynamicProperty
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (object): aObject[i].General.uiLifeCycles
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (object): aObject[i].Kinematic.fDistX
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (object): aObject[i].Kinematic.fDistY
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (object): aObject[i].Kinematic.fVrelX
+[D][2016-12-10][22:00:30][22878][homework.bunch] column (object): aObject[i].Kinematic.fVrelY
+[D][2016-12-10][22:00:30][22878][__main__] target summary
+                t           x           y           r           u           v           s
+count  645.000000  645.000000  645.000000  645.000000  645.000000  645.000000  645.000000
+mean    16.925090   40.829142    2.530866   40.996581    1.693024    0.213596    1.718309
+std      9.808772   19.279981    0.879629   19.109802    1.064247    0.231756    1.070345
+min      0.000000    4.238700   -1.051516    5.429853   -1.052472   -0.042472   -1.053328
+25%      8.438835   23.375475    2.376420   23.573153    0.870451    0.021531    0.871445
+50%     16.921416   46.157518    2.731044   46.249249    1.843746    0.153359    1.907396
+75%     25.397170   59.975106    3.087028   60.031475    2.572631    0.329234    2.602574
+max     33.887476   63.159907    4.093603   63.164837    5.962060    1.143736    5.982478
+[D][2016-12-10][22:00:30][22878][__main__] reference summary
+                t           x           y           r           u           v           s
+count  645.000000  645.000000  645.000000  645.000000  645.000000  645.000000  645.000000
+mean    16.925090   40.829142    2.530866   40.996581    1.693024    0.213596    1.718309
+std      9.808772   19.279981    0.879629   19.109802    1.064247    0.231756    1.070345
+min      0.000000    4.238700   -1.051516    5.429853   -1.052472   -0.042472   -1.053328
+25%      8.438835   23.375475    2.376420   23.573153    0.870451    0.021531    0.871445
+50%     16.921416   46.157518    2.731044   46.249249    1.843746    0.153359    1.907396
+75%     25.397170   59.975106    3.087028   60.031475    2.572631    0.329234    2.602574
+max     33.887476   63.159907    4.093603   63.164837    5.962060    1.143736    5.982478
+[D][2016-12-10][22:00:30][22878][__main__] reference-target summary
+                t           x           y           r           u           v           s
+count  645.000000  645.000000  645.000000  645.000000  645.000000  645.000000  645.000000
+mean    16.925090   -0.001255    0.414813    0.017109    0.046944   -0.299352    0.080764
+std      9.808772    0.150064    0.483754    0.150490    0.508923    0.308730    0.506190
+min      0.000000   -0.243529   -0.833317   -0.232766   -3.179446   -1.236654   -3.194226
+25%      8.438835   -0.132227    0.069634   -0.099730   -0.247309   -0.488947   -0.202057
+50%     16.921416   -0.053737    0.350744   -0.051588    0.056462   -0.206600    0.074270
+75%     25.397170    0.126367    0.658182    0.153357    0.341988   -0.071695    0.363670
+max     33.887476    0.329814    2.084849    0.306848    3.031520    0.289000    3.039914
+[D][2016-12-10][22:00:30][22878][homework.plots.boxplot] creating General.uiLifeCycles boxplots
+[D][2016-12-10][22:00:30][22878][homework.plots.boxplot] there are 40 total objects
+[D][2016-12-10][22:00:30][22878][homework.plots.boxplot] objects will be partitioned into groups of 10
+[D][2016-12-10][22:00:30][22878][homework.plots.boxplot] plotting will occur on a 2x2 subplot grid
+[D][2016-12-10][22:00:30][22878][homework.plots.boxplot] the total number of subplots is 4
+[D][2016-12-10][22:00:30][22878][homework.plots.helpers] saving: uiLifeCycles.pdf
+[D][2016-12-10][22:00:31][22878][homework.plots.helpers] cropping: uiLifeCycles.pdf
+[D][2016-12-10][22:00:31][22878][homework.plots.trajectory] creating compnents plot via <function t_vs_attr at 0x7fb5876df400>
+[D][2016-12-10][22:00:32][22878][homework.plots.helpers] saving: traj_32.pdf
+[D][2016-12-10][22:00:32][22878][homework.plots.helpers] cropping: traj_32.pdf
+[D][2016-12-10][22:00:33][22878][homework.plots.trajectory] creating compnents plot via <function attr_histogram at 0x7fb5876df488>
+[D][2016-12-10][22:00:33][22878][homework.plots.helpers] saving: hist_32.pdf
+[D][2016-12-10][22:00:34][22878][homework.plots.helpers] cropping: hist_32.pdf
+[D][2016-12-10][22:00:35][22878][homework.plots.trajectory] creating compnents plot via <function main.<locals>.<lambda> at 0x7fb57bb66158>
+[D][2016-12-10][22:00:35][22878][homework.plots.helpers] saving: rollex_mean.pdf
+[D][2016-12-10][22:00:36][22878][homework.plots.helpers] cropping: rollex_mean.pdf
+[D][2016-12-10][22:00:36][22878][homework.plots.trajectory] creating compnents plot via <function main.<locals>.<lambda> at 0x7fb57afb98c8>
+[D][2016-12-10][22:00:36][22878][homework.plots.helpers] saving: rollex_std.pdf
+[D][2016-12-10][22:00:37][22878][homework.plots.helpers] cropping: rollex_std.pdf
+[D][2016-12-10][22:00:37][22878][homework.plots.trajectory] creating compnents plot via <function main.<locals>.<lambda> at 0x7fb57b07c6a8>
+[D][2016-12-10][22:00:38][22878][homework.plots.helpers] saving: rollex_median.pdf
+[D][2016-12-10][22:00:38][22878][homework.plots.helpers] cropping: rollex_median.pdf
+[D][2016-12-10][22:00:38][22878][homework.plots.trajectory] creating compnents plot via <function main.<locals>.<lambda> at 0x7fb57a5a86a8>
+[D][2016-12-10][22:00:39][22878][homework.plots.helpers] saving: rollex_cov.pdf
+[D][2016-12-10][22:00:40][22878][homework.plots.helpers] cropping: rollex_cov.pdf
