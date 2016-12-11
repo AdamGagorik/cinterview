@@ -1,6 +1,31 @@
 """
 Analyze RADAR data in a CSV file.
-    The CSV file is assumed to have columns labeled: aObject[i].property
+
+The script will compare the source position and velocity
+    with an object identified by the --label command.
+
+If the --label command is absent, then only a boxplot
+    of object uiLifeCycles will be made.
+Examine the boxplots of uiLifeCycles to determine which
+    object is of interest.
+
+The columns:
+    (required) [us ] TimeStamp
+    (optional) [#  ] CycleCount
+
+The source columns:
+    (required) [kph] CAN Global.RelSpd_tg1
+    (required) [deg] CAN Global.Angle_tg1
+    (required) [m  ] CAN Global.Range_tg1
+    (optional) [?  ] CAN <trait>
+
+The object columns:
+    (required) [#  ] aObject[i].General.uiLifeCycles
+    (required) [m  ] aObject[i].Kinematic.fDistX
+    (required) [m  ] aObject[i].Kinematic.fDistY
+    (required) [mps] aObject[i].Kinematic.fVrelX
+    (required) [mps] aObject[i].Kinematic.fVrelY
+    (optional) [?  ] aObject[i].<trait>
 """
 import matplotlib.pyplot as plt
 import collections
