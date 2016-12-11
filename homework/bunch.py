@@ -76,15 +76,6 @@ class RADARBunch(BaseBunch):
 
         column_time_stamp  (str): column name for TimeStamp
         column_cyclecount  (str): column name for CycleCount
-
-    Properties:
-        num_cols_object (int): size of columns_object
-        num_cols_source (int): size of columns_source
-        num_cols_extant (int): size of columns_remain
-
-        num_object_labels (int): size of objects_labels
-        num_object_traits (int): size of objects_traits
-        num_source_traits (int): size of objects_traits
     """
     def __init__(self, path):
         # source column(s) meta-data
