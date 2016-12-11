@@ -1,4 +1,4 @@
-NAME = homework
+NAME = cinterview
 NOSE = nosetests --verbosity 2
 CCMD = find . -type f -name \*.pyc             -or \
               -type d -name __pycache__        -or \

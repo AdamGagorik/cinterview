@@ -1,4 +1,4 @@
-name: homework
+name: cinterview
 channels: !!python/tuple
 - defaults
 dependencies:
